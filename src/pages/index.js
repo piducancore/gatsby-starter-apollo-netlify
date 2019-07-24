@@ -25,12 +25,20 @@ const IndexPage = () => (
         return <h1>{data.hello}</h1>
       }}
     </Query>
-    <p>Welcome to your new Gatsby site.</p>
+    <p>Welcome.</p>
+    <p>
+      This is an example project using <b>Gatsby</b> on the front and{" "}
+      <b>Apollo Server</b> on the back, thanks to <b>Netlify</b> functions. You
+      can check <code>src/pages/index.js</code> to edit this page, and{" "}
+      <code>src/lambda/graphql.js</code> to develop your server.
+    </p>
     <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <div style={{ maxWidth: `300px`, margin: `1.45rem auto` }}>
+      <Link to="/page-2/">
+        <Image />
+        Go to page 2
+      </Link>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
 
