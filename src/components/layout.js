@@ -29,18 +29,30 @@ const Layout = ({ children }) => {
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
+          maxWidth: 800,
           padding: `0px 1.0875rem 1.45rem`,
           paddingTop: 0,
+          textAlign: `center`,
         }}
       >
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
       </div>
+      <footer
+        style={{
+          background: `rebeccapurple`,
+          color: `white`,
+          textAlign: `center`,
+          position: `fixed`,
+          bottom: `0px`,
+          width: `100%`,
+        }}
+      >
+        © {new Date().getFullYear()}, Built with
+        {` `}
+        <a style={{ color: `white` }} href="https://www.gatsbyjs.org">
+          Gatsby
+        </a>
+      </footer>
     </>
   )
 }
