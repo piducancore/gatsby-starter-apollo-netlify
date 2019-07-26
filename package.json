@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-starter-apollo-netlify",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "This project is an easy way to start developing fullstack apps with Gatsby and Apollo Server (using Netlify Lambda functions).",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "@piducancore",
   "dependencies": {
     "apollo-boost": "^0.4.3",
     "apollo-server-lambda": "^2.7.0",
@@ -43,9 +43,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/piducancore/gatsby-starter-apollo-netlify"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/piducancore/gatsby-starter-apollo-netlify/issues"
   }
 }
