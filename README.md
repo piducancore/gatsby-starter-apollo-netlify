@@ -39,7 +39,7 @@ netlify dev
 
 Start by checking `src/pages/index.js` to see an example query using the `Query` component from `react-apollo`, and `src/lambda/graphql.js` to start editing your Apollo Server.
 
-You can find Apollo Server's GraphqlQL Playground at `http://localhost:8888/.netlify/functions/graphql`
+You can find Apollo Server's GraphQL Playground at `http://localhost:8888/.netlify/functions/graphql`
 
 _Note: You'll also see a second link: `http://localhost:8000`. This is Gatsby's default dev server, and it won't have access to our Apollo Server (or any other serverless function) since Netlify Dev is doing all the proxying._
 
