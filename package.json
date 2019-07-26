@@ -32,6 +32,7 @@
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop",
+    "postinstall": "cd lambda && yarn install",
     "format": "prettier --write src/**/*.{js,jsx}",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
