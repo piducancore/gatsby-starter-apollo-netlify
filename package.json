@@ -25,7 +25,6 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "netlify-lambda": "^1.5.0",
     "prettier": "^1.18.2"
   },
   "keywords": [
@@ -33,11 +32,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build:gatsby": "gatsby build",
-    "build:lambda": "netlify-lambda build src/lambda",
-    "build": "yarn build:gatsby && yarn build:lambda",
-    "start:gatsby": "gatsby develop",
-    "start": "netlify dev",
+    "build": "gatsby build",
+    "start": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },

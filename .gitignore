@@ -68,8 +68,5 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-# lambda build
-/lambda/
-
 # .netlify folder
 /.netlify/
