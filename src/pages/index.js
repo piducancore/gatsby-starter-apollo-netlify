@@ -33,7 +33,7 @@ const IndexPage = props => (
       <code>src/lambda/graphql.js</code> to start editing your Apollo Server.
     </p>
     <p>
-      You can find Apollo Server's GraphqlQL Playground at
+      You can find Apollo Server's GraphqlQL Playground at{" "}
       <code>{props.location.origin}/.netlify/functions/graphql</code>
     </p>
     {console.log(props)}
