@@ -37,7 +37,7 @@ netlify dev
 
 **That's it**. Your Netlify Dev server is running at `http://localhost:8888`!
 
-Start by checking `src/pages/index.js` to see an example query using the `Query` component from `react-apollo`, and `src/lambda/graphql.js` to start editing your Apollo Server.
+Start by checking `src/pages/index.js` to see an example query using the `Query` component from `react-apollo`, and `lambda/graphql.js` to start editing your Apollo Server.
 
 You can find Apollo Server's GraphQL Playground at `http://localhost:8888/.netlify/functions/graphql`
 

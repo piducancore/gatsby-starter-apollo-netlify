@@ -30,7 +30,7 @@ const IndexPage = props => (
       Start by checking <code>src/pages/index.js</code> to see an example query
       using the
       <code>Query</code> component from <code>react-apollo</code>, and{" "}
-      <code>src/lambda/graphql.js</code> to start editing your Apollo Server.
+      <code>lambda/graphql.js</code> to start editing your Apollo Server.
     </p>
     <p>
       You can find Apollo Server's GraphQL Playground at{" "}
