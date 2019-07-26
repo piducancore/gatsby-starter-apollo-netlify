@@ -13,7 +13,7 @@ const APOLLO_QUERY = gql`
   }
 `
 
-const IndexPage = () => (
+const IndexPage = props => (
   <Layout>
     <SEO title="Home" />
     <h1>Hi people</h1>
@@ -27,17 +27,20 @@ const IndexPage = () => (
     </Query>
     <p>Welcome.</p>
     <p>
-      This is an example project using <b>Gatsby</b> on the front and{" "}
-      <b>Apollo Server</b> on the back, thanks to <b>Netlify</b> functions. You
-      can check <code>src/pages/index.js</code> to edit this page, and{" "}
-      <code>src/lambda/graphql.js</code> to develop your server.
+      Start by checking <code>src/pages/index.js</code> to see an example query
+      using the
+      <code>Query</code> component from <code>react-apollo</code>, and{" "}
+      <code>src/lambda/graphql.js</code> to start editing your Apollo Server.
     </p>
+    <p>
+      You can find Apollo Server's GraphqlQL Playground at
+      <code>{props.location.origin}/.netlify/functions/graphql</code>
+    </p>
+    {console.log(props)}
     <p>Now go build something great.</p>
     <div style={{ maxWidth: `300px`, margin: `1.45rem auto` }}>
-      <Link to="/page-2/">
-        <Image />
-        Go to page 2
-      </Link>
+      <Image />
+      <Link to="/page-2/">Go to page 2</Link>
     </div>
   </Layout>
 )
