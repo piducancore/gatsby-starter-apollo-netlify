@@ -26,13 +26,15 @@
     "prettier": "^1.18.2"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "apollo",
+    "graphql",
+    "netlify"
   ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop",
-    "postinstall": "cd lambda && yarn install",
     "format": "prettier --write src/**/*.{js,jsx}",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
