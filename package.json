@@ -35,7 +35,7 @@
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop",
-    "postinstall": "cd functions/graphql && yarn install",
+    "postinstall": "cd functions/graphql && yarn install && cd prisma && prisma generate",
     "format": "prettier --write src/**/*.{js,jsx}",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },

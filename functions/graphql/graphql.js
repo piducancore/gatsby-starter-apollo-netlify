@@ -1,22 +1,40 @@
+const path = require("path")
 const { ApolloServer, gql } = require("apollo-server-lambda")
+const { importSchema } = require("graphql-import")
+const { makeExecutableSchema } = require("graphql-tools")
+const { applyMiddleware } = require("graphql-middleware")
+const { verify } = require("jsonwebtoken")
 
-// Construct a schema, using GraphQL schema language
-const typeDefs = gql`
-  type Query {
-    hello: String
+const { prisma } = require("./prisma/generated/prisma-client")
+const { resolvers } = require("./resolvers")
+const { permissions } = require("./permissions")
+
+const getUser = event => {
+  let token
+  try {
+    token = verify(
+      event.headers.authorization.replace("Bearer ", ""), // || event.headers.cookie.replace("token=", ""),
+      process.env.AUTH_SECRET
+    )
+  } catch (e) {
+    return null
   }
-`
-
-// Provide resolver functions for your schema fields
-const resolvers = {
-  Query: {
-    hello: () => "Hello from Apollo Server!",
-  },
+  return token
 }
 
+const typeDefs = importSchema(path.join(__dirname, "schema.graphql"))
+const schema = makeExecutableSchema({ typeDefs, resolvers })
+const schemaWithMiddleware = applyMiddleware(schema, permissions)
+
 const server = new ApolloServer({
-  typeDefs,
+  schema: schemaWithMiddleware,
   resolvers,
+  context: async ({ event, context }) => ({
+    prisma,
+    user: await getUser(event),
+    event,
+    context,
+  }),
   introspection: true,
   playground: true,
 })
