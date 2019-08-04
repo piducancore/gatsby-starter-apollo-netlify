@@ -9,7 +9,12 @@ import SEO from "../components/seo"
 
 const APOLLO_QUERY = gql`
   query {
-    hello
+    posts {
+      title
+      author {
+        email
+      }
+    }
   }
 `
 
@@ -22,7 +27,13 @@ const IndexPage = props => (
       {({ data, loading, error }) => {
         if (loading) return <p>Loading...</p>
         if (error) return <p>Error: {error.message}</p>
-        return <h1>{data.hello}</h1>
+        const { posts } = data
+        return posts.map((post, index) => (
+          <div key={index}>
+            <h1>{post.title}</h1>
+            <p>{post.author.email}</p>
+          </div>
+        ))
       }}
     </Query>
     <p>Welcome.</p>
@@ -41,7 +52,7 @@ const IndexPage = props => (
     <p>Now go build something great.</p>
     <div style={{ maxWidth: `300px`, margin: `1.45rem auto` }}>
       <Image />
-      <Link to="/page-2/">Go to page 2</Link>
+      <Link to="/login">Go to login page</Link>
     </div>
   </Layout>
 )
