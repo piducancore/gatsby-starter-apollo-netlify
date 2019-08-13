@@ -4,6 +4,7 @@ const { isAuthenticated, isOwner } = require("./rules")
 const permissions = shield({
   Query: {
     me: isAuthenticated,
+    posts: isAuthenticated,
   },
   Mutation: {
     createPost: isAuthenticated,
