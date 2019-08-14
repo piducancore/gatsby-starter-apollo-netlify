@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { navigate } from "gatsby"
 import gql from "graphql-tag"
-import { Mutation } from "react-apollo"
+import { Mutation, withApollo } from "react-apollo"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -72,6 +72,7 @@ class Login extends Component {
             {login ? "need to create an account?" : "already have an account?"}
           </div>
         </div>
+        <button onClick={this._logout}>logout</button>
       </Layout>
     )
   }
@@ -85,6 +86,12 @@ class Login extends Component {
   _saveUserData = token => {
     localStorage.setItem("auth-token", token)
   }
+
+  _logout = () => {
+    localStorage.clear()
+    this.props.client.resetStore()
+    navigate(`/`)
+  }
 }
 
-export default Login
+export default withApollo(Login)
