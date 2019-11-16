@@ -19,6 +19,7 @@
     "gatsby-plugin-react-helmet": "^3.1.11",
     "gatsby-plugin-sharp": "^2.2.29",
     "gatsby-source-filesystem": "^2.1.31",
+    "gatsby-theme-apollo": "2.0.0",
     "gatsby-transformer-sharp": "^2.2.21",
     "graphql-tag": "^2.10.1",
     "isomorphic-fetch": "^2.2.1",
