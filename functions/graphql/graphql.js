@@ -1,21 +1,14 @@
-const { ApolloServer, gql } = require("apollo-server-lambda")
+const path = require("path")
+const { ApolloServer } = require("apollo-server-lambda")
+const { importSchema } = require("graphql-import")
+const { makeExecutableSchema } = require("graphql-tools")
+const { resolvers } = require("./resolvers")
 
-// Construct a schema, using GraphQL schema language
-const typeDefs = gql`
-  type Query {
-    hello: String
-  }
-`
-
-// Provide resolver functions for your schema fields
-const resolvers = {
-  Query: {
-    hello: () => "Hello from Apollo Server!",
-  },
-}
+const typeDefs = importSchema(path.join(__dirname, "schema.graphql"))
+const schema = makeExecutableSchema({ typeDefs, resolvers })
 
 const server = new ApolloServer({
-  typeDefs,
+  schema,
   resolvers,
   introspection: true,
   playground: true,
