@@ -4,8 +4,10 @@ const resolvers = {
     hello: () => "Hello from Apollo Server!",
   },
   Mutation: {
-    uploadImage: (root, args) => {
-      return args.image
+    uploadImage: (root, { image }) => {
+      // Do whatever you want with your image.
+      // In this case we just return it.
+      return image
     },
   },
 }
