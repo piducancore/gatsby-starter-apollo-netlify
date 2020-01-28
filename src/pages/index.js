@@ -6,6 +6,7 @@ import { useQuery } from "@apollo/react-hooks"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import Dropzone from "../components/dropzone"
 
 const APOLLO_QUERY = gql`
   query {
@@ -22,6 +23,7 @@ const IndexPage = props => {
       <p> and...</p>
       <h1>{data && data.hello}</h1>
       <p>Welcome.</p>
+      <Dropzone />
       <p>
         Start by checking <code>src/pages/index.js</code> to see an example
         query using the

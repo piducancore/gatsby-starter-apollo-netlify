@@ -2,3 +2,7 @@
 type Query {
   hello: String
 }
+
+type Mutation {
+  uploadImage(image: String!): String!
+}
