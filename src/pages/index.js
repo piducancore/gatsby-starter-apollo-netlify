@@ -35,7 +35,6 @@ const IndexPage = props => {
         You can find Apollo Server's GraphQL Playground at{" "}
         <code>{props.location.origin}/.netlify/functions/graphql</code>
       </p>
-      {console.log(props)}
       <p>Now go build something great.</p>
       <div style={{ maxWidth: `300px`, margin: `1.45rem auto` }}>
         <Image />
