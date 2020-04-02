@@ -1,5 +1,7 @@
+/** @jsx jsx */
+import { Styled, jsx } from "theme-ui"
 import React from "react"
-import { Link } from "gatsby"
+import { navigate } from "gatsby"
 import gql from "graphql-tag"
 import { useQuery } from "@apollo/react-hooks"
 
@@ -14,31 +16,36 @@ const APOLLO_QUERY = gql`
 `
 
 const IndexPage = props => {
-  const { data } = useQuery(APOLLO_QUERY)
+  const { data, loading, error } = useQuery(APOLLO_QUERY)
   return (
     <Layout>
       <SEO title="Home" />
-      <h1>Hi people</h1>
-      <p> and...</p>
-      <h1>{data && data.hello}</h1>
-      <p>Welcome.</p>
-      <p>
-        Start by checking <code>src/pages/index.js</code> to see an example
-        query using the
-        <code>Query</code> component from <code>react-apollo</code>, and{" "}
-        <code>functions/graphql/graphql.js</code> to start editing your Apollo
-        Server.
-      </p>
-      <p>
-        You can find Apollo Server's GraphQL Playground at{" "}
-        <code>{props.location.origin}/.netlify/functions/graphql</code>
-      </p>
-      {console.log(props)}
-      <p>Now go build something great.</p>
-      <div style={{ maxWidth: `300px`, margin: `1.45rem auto` }}>
-        <Image />
-        <Link to="/page-2/">Go to page 2</Link>
-      </div>
+      <Styled.h1>Hi people</Styled.h1>
+      <Styled.p> and...</Styled.p>
+      <Styled.h1>
+        {data ? data.hello : loading ? "Loading..." : error && error.message}
+      </Styled.h1>
+      <Styled.p>Welcome.</Styled.p>
+      <Styled.p>
+        Start by checking <Styled.code>src/pages/index.js</Styled.code> to see
+        an example query using the
+        <Styled.code>useQuery</Styled.code> hook from{" "}
+        <Styled.code>@apollo/react-hooks</Styled.code>.{" "}
+      </Styled.p>
+      <Styled.p>
+        Also check <Styled.code>functions/graphql/graphql.js</Styled.code> to
+        start developing your Apollo Server.
+      </Styled.p>
+      <Styled.p>
+        Aditionally, you can find Apollo Server's GraphQL Playground at{" "}
+        <Styled.code>
+          {props.location.origin}/.netlify/functions/graphql
+        </Styled.code>
+      </Styled.p>
+      <Styled.p>Now go build something great.</Styled.p>
+      <Styled.a href="#" onClick={() => navigate("/page-2/")}>
+        Go to page 2
+      </Styled.a>
     </Layout>
   )
 }

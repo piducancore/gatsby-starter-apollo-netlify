@@ -1,16 +1,11 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
+/** @jsx jsx */
+import { Styled, jsx } from "theme-ui"
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import "normalize.css"
 
 import Header from "./header"
-import "./layout.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -24,36 +19,42 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <Styled.root
+      sx={{
+        display: `flex`,
+        flexDirection: `column`,
+        minHeight: `100vh`,
+      }}
+    >
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 800,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-          textAlign: `center`,
-        }}
-      >
-        <main>{children}</main>
-      </div>
-      <footer
-        style={{
-          background: `rebeccapurple`,
-          color: `white`,
-          textAlign: `center`,
-          position: `fixed`,
-          bottom: `0px`,
+      <main
+        sx={{
+          flex: 1,
+          mx: `auto`,
+          my: 0,
           width: `100%`,
+          maxWidth: `container`,
+          p: 3,
+          pt: 0,
         }}
       >
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a style={{ color: `white` }} href="https://www.gatsbyjs.org">
-          Gatsby
-        </a>
+        {children}
+      </main>
+      <footer
+        sx={{
+          mx: `auto`,
+          width: `100%`,
+          maxWidth: `container`,
+          p: 3,
+        }}
+      >
+        <Styled.p>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <Styled.a href="https://www.gatsbyjs.org">Gatsby</Styled.a>
+        </Styled.p>
       </footer>
-    </>
+    </Styled.root>
   )
 }
 
