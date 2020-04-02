@@ -37,10 +37,11 @@ const IndexPage = props => {
         start developing your Apollo Server.
       </Styled.p>
       <Styled.p>
-        Aditionally, you can find Apollo Server's GraphQL Playground at{" "}
-        <Styled.code>
-          {props.location.origin}/.netlify/functions/graphql
-        </Styled.code>
+        Aditionally, you can find Apollo Server's GraphQL Playground{" "}
+        <Styled.a href={`${props.location.origin}/.netlify/functions/graphql`}>
+          here
+        </Styled.a>
+        .
       </Styled.p>
       <Styled.p>Now go build something great.</Styled.p>
       <Styled.a href="#" onClick={() => navigate("/page-2/")}>
