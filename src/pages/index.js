@@ -2,8 +2,7 @@
 import { Styled, jsx } from "theme-ui"
 import React from "react"
 import { navigate } from "gatsby"
-import gql from "graphql-tag"
-import { useQuery } from "@apollo/react-hooks"
+import { useQuery, gql } from "@apollo/client"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -29,8 +28,7 @@ const IndexPage = props => {
       <Styled.p>
         Start by checking <Styled.code>src/pages/index.js</Styled.code> to see
         an example query using the
-        <Styled.code>useQuery</Styled.code> hook from{" "}
-        <Styled.code>@apollo/react-hooks</Styled.code>.{" "}
+        <Styled.code>useQuery</Styled.code> hook.
       </Styled.p>
       <Styled.p>
         Also check <Styled.code>functions/graphql/graphql.js</Styled.code> to
