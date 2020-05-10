@@ -2,7 +2,6 @@ import { swiss as light, deep as dark } from "@theme-ui/presets"
 
 export default {
   ...light,
-  initialColorMode: "light",
   colors: {
     ...light.colors,
     modes: {

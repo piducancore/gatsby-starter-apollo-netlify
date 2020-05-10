@@ -6,7 +6,7 @@ const Toggle = () => {
   return (
     <svg
       onClick={e => {
-        setColorMode(colorMode === "light" ? "dark" : "light")
+        setColorMode(colorMode === "default" ? "dark" : "default")
       }}
       xmlns="http://www.w3.org/2000/svg"
       width="24"
