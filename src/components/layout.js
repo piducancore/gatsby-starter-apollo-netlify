@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { Styled, jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import "normalize.css"
 
-import Header from "./header"
+import Toggle from "./toggle"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -17,37 +17,44 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
+  const { title } = data.site.siteMetadata
   return (
     <Styled.root
       sx={{
+        width: "100%",
+        maxWidth: "container",
+        m: "0 auto",
         display: `flex`,
         flexDirection: `column`,
         minHeight: `100vh`,
+        p: 3,
       }}
     >
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <header
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+        }}
+      >
+        <Styled.h1
+          sx={{
+            flex: 1,
+          }}
+        >
+          {title}
+        </Styled.h1>
+
+        <Toggle />
+      </header>
       <main
         sx={{
           flex: 1,
-          mx: `auto`,
-          my: 0,
-          width: `100%`,
-          maxWidth: `container`,
-          p: 3,
-          pt: 0,
         }}
       >
         {children}
       </main>
-      <footer
-        sx={{
-          mx: `auto`,
-          width: `100%`,
-          maxWidth: `container`,
-          p: 3,
-        }}
-      >
+      <footer>
         <Styled.p>
           © {new Date().getFullYear()}, Built with
           {` `}

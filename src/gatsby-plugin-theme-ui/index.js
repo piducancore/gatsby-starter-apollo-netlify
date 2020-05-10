@@ -1,16 +1,23 @@
-import { deep as baseStyles } from "@theme-ui/presets"
+import { swiss as light, deep as dark } from "@theme-ui/presets"
+
 export default {
-  ...baseStyles,
+  ...light,
+  initialColorMode: "light",
+  colors: {
+    ...light.colors,
+    modes: {
+      dark: {
+        ...dark.colors,
+      },
+    },
+  },
   sizes: {
     container: 768,
   },
   styles: {
-    ...baseStyles.styles,
-    p: {
-      // wordBreak: `break-all`,
-    },
+    ...light.styles,
     code: {
-      ...baseStyles.styles.code,
+      ...light.styles.code,
       bg: `muted`,
       px: 1,
       borderRadius: 3,
