@@ -13,7 +13,7 @@
   Gatsby Starter Apollo Netlify
 </h1>
 
-This project is an easy way to start developing fullstack apps with [Gatsby](https://github.com/gatsbyjs/gatsby) and [Apollo Server](https://github.com/apollographql/apollo-server) (using [Netlify Lambda functions](https://www.netlify.com/docs/functions/)). For developing we use [Netlify Dev](https://github.com/netlify/netlify-dev-plugin) to bring all of this magic to our local machine.
+This is an easy way to start developing fullstack GraphQL apps with [Gatsby](https://github.com/gatsbyjs/gatsby) and [Apollo Server](https://github.com/apollographql/apollo-server) (powered by [Netlify functions](https://www.netlify.com/docs/functions/)).
 
 ## Requirements 🏁
 
@@ -26,7 +26,7 @@ Create a new Gatsby project specifying this starter, navigate to it, and start N
 
 ```sh
 # Use the Gatsby CLI to create a new project, specifying this starter.
-gatsby new my-new-project https://github.com/piducancore/gatsby-starter-apollo-netlify
+gatsby new my-new-project piducancore/gatsby-starter-apollo-netlify
 
 # Go to your new project’s directory.
 cd my-new-project/
@@ -37,7 +37,9 @@ netlify dev
 
 **That's it**. Your Netlify Dev server is running at `http://localhost:8888`!
 
-Start by checking `src/pages/index.js` to see an example query using the `Query` component from `react-apollo`, and `functions/graphql/graphql.js` to start editing your Apollo Server.
+Start by checking `src/pages/index.js` to see an example query using the `useQuery` hook from `@apollo/client`.
+
+Also check `functions/graphql/graphql.js` to start developing your Apollo Server.
 
 You can find Apollo Server's GraphQL Playground at `http://localhost:8888/.netlify/functions/graphql`
 
