@@ -5,7 +5,6 @@ import { navigate } from "gatsby"
 import { useQuery, gql } from "@apollo/client"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const APOLLO_QUERY = gql`
