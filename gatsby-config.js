@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Gatsby Starter Apollo Netlify`,
-    description: `This project is an easy way to start developing fullstack apps with Gatsby and Apollo Server (using Netlify Lambda functions). For developing we use Netlify Dev to bring all of this magic to our local machine.`,
+    description: `This is an easy way to start developing fullstack GraphQL apps with Gatsby and Apollo Server (powered by Netlify functions).`,
     author: `@piducancore`,
   },
   plugins: [
