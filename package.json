@@ -6,17 +6,18 @@
   "author": "@piducancore",
   "dependencies": {
     "@apollo/client": "^3.0.0-beta.44",
+    "@graphql-tools/graphql-file-loader": "^6.0.9",
+    "@graphql-tools/load": "^6.0.9",
+    "@graphql-tools/schema": "^6.0.9",
     "@theme-ui/presets": "^0.3.0",
+    "apollo-server-lambda": "^2.14.3",
     "gatsby": "^2.15.35",
-    "gatsby-image": "^2.2.27",
     "gatsby-plugin-manifest": "^2.2.21",
     "gatsby-plugin-offline": "^3.0.14",
     "gatsby-plugin-react-helmet": "^3.1.11",
-    "gatsby-plugin-sharp": "^2.2.29",
     "gatsby-plugin-theme-ui": "^0.3.0",
-    "gatsby-source-filesystem": "^2.1.31",
     "gatsby-theme-apollo": "^3.0.2",
-    "gatsby-transformer-sharp": "^2.2.21",
+    "graphql": "^15.1.0",
     "isomorphic-fetch": "^2.2.1",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
@@ -26,19 +27,20 @@
     "theme-ui": "^0.3.1"
   },
   "devDependencies": {
+    "eslint-plugin-graphql": "^4.0.0",
     "prettier": "^1.18.2"
   },
   "keywords": [
     "gatsby",
     "apollo",
     "graphql",
-    "netlify"
+    "netlify",
+    "theme-ui"
   ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop",
-    "postinstall": "cd functions/graphql && yarn install",
     "format": "prettier --write src/**/*.{js,jsx}",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
