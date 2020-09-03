@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { Styled, jsx } from "theme-ui"
 import React from "react"
-import { navigate } from "gatsby"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -13,7 +13,7 @@ const NotFoundPage = () => (
     <Styled.p>
       You just hit a route that doesn&#39;t exist... the sadness.
     </Styled.p>
-    <Styled.a href="#" onClick={() => navigate("/")}>
+    <Styled.a as={Link} to="/">
       Go back to the homepage
     </Styled.a>
   </Layout>
