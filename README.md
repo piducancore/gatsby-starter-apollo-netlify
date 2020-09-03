@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="48" />
+    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="48" />
   </a>
   <a href="https://www.apollographql.com/">
     <img alt="Apollo" src="https://rawgit.com/apollographql/apollo-client/master/docs/source/logo/square.png" width="48"  style="margin-left:16px; margin-right:16px" />
