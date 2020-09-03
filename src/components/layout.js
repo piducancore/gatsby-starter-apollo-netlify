@@ -1,16 +1,11 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
+/** @jsx jsx */
+import { jsx, Styled } from "theme-ui"
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import "normalize.css"
 
-import Header from "./header"
-import "./layout.css"
+import Toggle from "./toggle"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -22,38 +17,51 @@ const Layout = ({ children }) => {
       }
     }
   `)
-
+  const { title } = data.site.siteMetadata
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 800,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-          textAlign: `center`,
+    <Styled.root
+      sx={{
+        width: "100%",
+        maxWidth: "container",
+        m: "0 auto",
+        display: `flex`,
+        flexDirection: `column`,
+        minHeight: `100vh`,
+        p: 3,
+      }}
+    >
+      <header
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
         }}
       >
-        <main>{children}</main>
-      </div>
-      <footer
-        style={{
-          background: `rebeccapurple`,
-          color: `white`,
-          textAlign: `center`,
-          position: `fixed`,
-          bottom: `0px`,
-          width: `100%`,
+        <Styled.h1
+          sx={{
+            flex: 1,
+          }}
+        >
+          {title}
+        </Styled.h1>
+
+        <Toggle />
+      </header>
+      <main
+        sx={{
+          flex: 1,
         }}
       >
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a style={{ color: `white` }} href="https://www.gatsbyjs.org">
-          Gatsby
-        </a>
+        {children}
+      </main>
+      <footer>
+        <Styled.p>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <Styled.a href="https://www.gatsbyjs.org">Gatsby</Styled.a>
+        </Styled.p>
       </footer>
-    </>
+    </Styled.root>
   )
 }
 
