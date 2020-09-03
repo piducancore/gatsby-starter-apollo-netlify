@@ -13,6 +13,13 @@ export default merge(light, {
     container: 768,
   },
   styles: {
+    a: {
+      color: "primary",
+      textDecoration: "none",
+      "&:hover": {
+        color: "secondary",
+      },
+    },
     code: {
       bg: `muted`,
       px: 1,
