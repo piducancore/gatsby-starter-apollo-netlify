@@ -41,6 +41,7 @@ const IndexPage = (props) => {
         </Styled.a>
         .
       </Styled.p>
+      <Dropzone />
       <Styled.p>Now go build something great.</Styled.p>
       <Styled.a as={Link} to="/page-2">
         Go to page 2
