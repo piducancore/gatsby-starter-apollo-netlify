@@ -3,7 +3,7 @@ import { jsx, Styled } from "theme-ui"
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import "normalize.css"
+import { Global } from "@emotion/core"
 
 import Toggle from "./toggle"
 
@@ -30,6 +30,13 @@ const Layout = ({ children }) => {
         p: 3,
       }}
     >
+      <Global
+        styles={(theme) => ({
+          "*:focus": {
+            outline: 0,
+          },
+        })}
+      />
       <header
         sx={{
           display: "flex",
