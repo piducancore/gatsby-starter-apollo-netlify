@@ -1,6 +1,8 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import React, { useCallback } from "react"
 import { useDropzone } from "react-dropzone"
-import { useMutation } from "@apollo/react-hooks"
+import { useMutation } from "@apollo/client"
 import gql from "graphql-tag"
 
 const MUTATION = gql`
@@ -17,8 +19,8 @@ const DropZone = () => {
   })
 
   const onDrop = useCallback(
-    files => {
-      files.forEach(file => {
+    (files) => {
+      files.forEach((file) => {
         const reader = new FileReader()
         reader.onabort = () => console.log("file reading was aborted")
         reader.onerror = () => console.log("file reading has failed")
@@ -35,7 +37,17 @@ const DropZone = () => {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop })
 
   return (
-    <div {...getRootProps()}>
+    <div
+      sx={{
+        cursor: "pointer",
+        // p: 4,
+        border: "2px dashed",
+        borderColor: isDragActive ? "primary" : "text",
+        color: isDragActive ? "primary" : "text",
+        textAlign: "center",
+      }}
+      {...getRootProps()}
+    >
       <input {...getInputProps()} />
       {isDragActive ? (
         <p>Drop the files here ...</p>
