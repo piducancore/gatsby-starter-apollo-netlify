@@ -11,7 +11,7 @@ const MUTATION = gql`
   }
 `
 
-const DropZone = () => {
+const DropZone = (props) => {
   const [mutate] = useMutation(MUTATION, {
     onCompleted(success) {
       console.log(success)
@@ -47,6 +47,7 @@ const DropZone = () => {
         textAlign: "center",
       }}
       {...getRootProps()}
+      {...props}
     >
       <input {...getInputProps()} />
       {isDragActive ? (
