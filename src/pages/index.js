@@ -6,7 +6,6 @@ import { useQuery, gql } from "@apollo/client"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Dropzone from "../components/dropzone"
 
 const APOLLO_QUERY = gql`
   query {
@@ -41,7 +40,6 @@ const IndexPage = (props) => {
         </Styled.a>
         .
       </Styled.p>
-      <Dropzone />
       <Styled.p>Now go build something great.</Styled.p>
       <Styled.a as={Link} to="/page-2">
         Go to page 2
